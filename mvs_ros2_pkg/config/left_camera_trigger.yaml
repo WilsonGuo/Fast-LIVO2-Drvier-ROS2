@@ -1,0 +1,46 @@
+%YAML:1.0
+
+#--------------------------------------------------------------------------------------------
+# Camera Parameters
+#--------------------------------------------------------------------------------------------
+SerialNumber: "DA1067368" 
+TopicName: "left_camera/image"
+
+TriggerEnable: 1 # 0 stands for Off, 1 stands for On
+
+ExposureAutoMode: 0 # 0 stands for Off, 1 stands for Once, 2 stands for Continues
+ExposureTime: 15000 # us
+
+# ExposureAutoMode: 2
+# AutoExposureTimeLower: 100
+# AutoExposureTimeUpper: 20000
+
+image_scale: 1 # 1 0.5
+GainAuto: 2 # Gain Auto, 0 stands for Off, 1 stands for Once, 2 stands for Continues
+Gain: 8 # min: 0   max: 17.0166
+Gamma: 0.7  # min: 0   max: 17.0166
+GammaSelector: 1 # 0 stands for user, 1 stands for sRGB
+# GammaEnable: 1
+
+PixelFormat: 3 # 0: RGB8, 1: BayerRG8, 2: BayerRG12Packed, 3: BayerGB12Packed, 4: BayerGB8
+
+
+#------------------------------------------
+# Camera intrinsic calibration
+#------------------------------------------
+Width: 1280
+Height: 1024
+
+D: [ -0.067602806, 0.09053561, -0.0020119, -0.0014219, 0.0 ]
+
+K: [ 1818.6567, 0.0, 751.525,
+     0.0, 1816.0247, 561.3526,
+     0.0, 0.0, 1.0 ]
+
+R: [ 1.0, 0.0, 0.0,
+     0.0, 1.0, 0.0,
+     0.0, 0.0, 1.0 ]
+
+P: [ 1803.63, 0.0, 750.65, 0.0,
+     0.0, 1806.67, 560.56, 0.0,
+     0.0, 0.0, 1.0, 0.0 ]
