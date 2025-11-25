@@ -1,6 +1,8 @@
 # Fast-LIVO2-Drvier-ROS2
 针对ROS2适配雷达和相机驱动，以及Vikit
 
+Fast-LIVO2-ROS2版本源码，请参照这里[链接](https://github.com/integralrobotics/FAST-LIVO2)
+
 使用教程，请参阅这里[链接](https://gitee.com/gwmunan/ros2/wikis/%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/Fast-LIVO2%E6%8B%93%E5%B1%95%E4%B9%8BROS2%E9%80%82%E9%85%8D)
 ### 适配平台：
 Ubuntu22.04
