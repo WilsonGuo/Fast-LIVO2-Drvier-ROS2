@@ -35,4 +35,4 @@ sudo rm -rf /usr/local/lib/cmake/Sophus
 sudo apt install ros-humble-sophus
 
 
-相关产品淘宝店地址：Fast-LIVO2-ROS2版本源码，请参照这里[链接](https://shop333711445.taobao.com/?spm=pc_detail.30350276.shop_block.dshopinfo.4dc17dd6hOGTKj)
+相关产品淘宝店地址：[链接](https://shop333711445.taobao.com/?spm=pc_detail.30350276.shop_block.dshopinfo.4dc17dd6hOGTKj)
