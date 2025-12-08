@@ -4,6 +4,8 @@
 Fast-LIVO2-ROS2版本源码，请参照这里[链接](https://github.com/integralrobotics/FAST-LIVO2)
 
 使用教程，请参阅这里[链接](https://gitee.com/gwmunan/ros2/wikis/%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/Fast-LIVO2%E6%8B%93%E5%B1%95%E4%B9%8BROS2%E9%80%82%E9%85%8D)
+
+B站视频教程地址：[SLAM系列之Fast LIVO2的ROS2适配](https://www.bilibili.com/video/BV1AiUvBxE7e/?share_source=copy_web&vd_source=dd0669827093367276172cd819a1ae99)
 ### 适配平台：
 Ubuntu22.04
 ROS2 Humble
@@ -31,3 +33,6 @@ sudo rm -rf /usr/local/lib/cmake/Sophus
 再重新安装
 
 sudo apt install ros-humble-sophus
+
+
+相关产品淘宝店地址：Fast-LIVO2-ROS2版本源码，请参照这里[链接](https://shop333711445.taobao.com/?spm=pc_detail.30350276.shop_block.dshopinfo.4dc17dd6hOGTKj)
