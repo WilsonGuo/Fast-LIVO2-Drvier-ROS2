@@ -266,11 +266,66 @@ int main(int argc, char **argv)
   MV_CC_SetEnumValue(handle, "TriggerMode", trigger_enable);
   MV_CC_SetEnumValue(handle, "TriggerSource", MV_TRIGGER_SOURCE_LINE0);
 
+  // 关闭/设置自动曝光
+  int exposure_auto = (int)Params["ExposureAutoMode"];
+  nRet = MV_CC_SetEnumValue(handle, "ExposureAuto", exposure_auto);
+  if (nRet != MV_OK)
+  {
+    ROS_ERROR("Set ExposureAuto failed: 0x%x", nRet);
+    return -1;
+  }
+
+  // 手动曝光：单位 us
+  if (exposure_auto == 0)
+  {
+    float exposure_time = (float)Params["ExposureTime"];
+    nRet = MV_CC_SetFloatValue(handle, "ExposureTime", exposure_time);
+    if (nRet != MV_OK)
+    {
+      ROS_ERROR("Set ExposureTime %.1f us failed: 0x%x",
+                exposure_time, nRet);
+      return -1;
+    }
+
+    // 回读相机实际曝光值
+    MVCC_FLOATVALUE actual_exposure = {};
+    nRet = MV_CC_GetFloatValue(handle, "ExposureTime", &actual_exposure);
+    if (nRet == MV_OK)
+    {
+      ROS_INFO("ExposureTime requested=%.1f us, actual=%.1f us",
+               exposure_time, actual_exposure.fCurValue);
+    }
+    else
+    {
+      ROS_WARN("Read ExposureTime failed: 0x%x", nRet);
+    }
+  }
+
+  // 设置自动增益；手动模式下写入增益
+  int gain_auto = (int)Params["GainAuto"];
+  nRet = MV_CC_SetEnumValue(handle, "GainAuto", gain_auto);
+  if (nRet != MV_OK)
+  {
+    ROS_ERROR("Set GainAuto failed: 0x%x", nRet);
+    return -1;
+  }
+
+  if (gain_auto == 0)
+  {
+    float gain = (float)Params["Gain"];
+    nRet = MV_CC_SetFloatValue(handle, "Gain", gain);
+    if (nRet != MV_OK)
+    {
+      ROS_ERROR("Set Gain %.2f failed: 0x%x", gain, nRet);
+      return -1;
+    }
+  }
+
   MV_CC_StartGrabbing(handle);
 
   width = (int)Params["Width"];
   height = (int)Params["Height"];
-  
+
   // 读取相机参数
   fillCameraInfoFromYAML(Params);
 
